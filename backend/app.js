@@ -79,11 +79,14 @@ const fight = (fighterA, fighterB) => {
             defensor = fighterA
         }
         let dmg = Food.attack(attacker, defensor)
-        console.log("dmg: ", dmg)
         console.log(attacker.getInternalTime(), " s")
         console.log(attacker.getName(), " lyö ja tekee ", dmg, " vahinkoa.")
+        if (defensor.health < 0) {
+        console.log(defensor.getName() + "lle jäi 0 Health")
+        } else {
         console.log(defensor.getName() + "lle jäi ", defensor.getHealth(), " Health")
         attacker.increaseInternalTime()
+        }
     }
 
     let winner
@@ -98,10 +101,9 @@ const fight = (fighterA, fighterB) => {
 async function initFoods() {
     const dataA = await getFoodData(300)
     const dataB = await getFoodData(355)
-    console.log(dataA[0], dataA[1], dataA[2], dataA[3], dataA[4])
-    let foodA = new Food(dataA[0], dataA[1], dataA[2], dataA[3], dataA[4])
-    let foodB = new Food(dataB[0], dataB[1], dataB[2], dataB[3], dataB[4])
-    console.log(foodA.getAttack,foodA.getDefence,foodA.getName)
+    console.log(...dataA)
+    let foodA = new Food(...dataA)
+    let foodB = new Food(...dataB)
     fight(foodA, foodB)
 }
 
