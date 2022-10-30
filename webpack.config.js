@@ -13,8 +13,8 @@ module.exports = {
         options: { presets: ["@babel/env"] }
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
@@ -37,5 +37,9 @@ module.exports = {
       // hotOnly
       hot: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [new webpack.HotModuleReplacementPlugin()],
+  watch: true,
+  watchOptions: {
+    ignored: ['**/node_modules','**/backend']
+  }
 };
