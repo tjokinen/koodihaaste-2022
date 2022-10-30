@@ -3,12 +3,8 @@ import "./App.scss"
 import CustomDropdown from "./CustomDropdown"
 import { Button, Container, Image, Row, Col } from 'react-bootstrap'
 import TwoCards from "./TwoCards"
+import TwoCards2 from "./TwoCards2"
 import CustomModal from "./CustomModal"
-
-//TODO
-//run app logic on backend
-//update Health
-//display winner in Custom Modal
 
 export default function App() {
 
@@ -25,6 +21,14 @@ export default function App() {
     const [seconds, setSeconds] = useState(0)
     const [step, setStep] = useState(0)
     const bottomRef = useRef(null)
+
+    //set opponent foodcode
+    useEffect(() => {
+        if (foodCode1 != '' && foodCode2 == '') {
+            let codes = [300, 29279, 32766, 28923, 386, 29806, 28920, 330, 350]
+            setFoodCode2(codes[Math.floor(Math.random() * 9)]) // select random food code from predefined (above) list
+        }
+    }, [foodCode1])
 
     //fetch food values when food code is set
     useEffect(() => {
@@ -65,9 +69,6 @@ export default function App() {
                         temp = foodValues2
                         temp[2] = results[i].defensorHealth
                         setFoodValues2(temp)
-
-                        console.log(temp)
-                        console.log(foodValues2)
                     } else {
                         let temp = foodValues1
                         temp[2] = results[i].defensorHealth
@@ -76,24 +77,14 @@ export default function App() {
                         temp = foodValues2
                         temp[2] = results[i].attackerHealth
                         setFoodValues2(temp)
-
-                        console.log(temp)
-                        console.log(foodValues2)
                     }
                     setStep(step + 1)
                 }
             }
             setSeconds(seconds + 1)
-            console.log(seconds)
         }, 1000);
         return () => clearInterval(interval);
     }, [seconds]);
-
-    /*
-    useEffect(() => {
-        bottomRef.current?.scrollIntoView({behavior: 'smooth'});
-    }, [])
-    */
 
     const getFoodValues = (code, setterFunction) => {
         fetch("http://localhost:4000/nutritional-values", {
@@ -143,6 +134,12 @@ export default function App() {
         return <></>
     }
 
+    const DisplayResetButton = () => {
+        if (phase == 'end') {
+            return <Button variant='success' onClick={() => {window.location.reload(true)}}>ALOITA ALUSTA</Button>
+        }
+    }
+
     //TODO text color
 
     const DisplayResults = () => {
@@ -172,7 +169,7 @@ export default function App() {
     useEffect(() => {
         let temp = []
         for (let i = 0; i < 30; i++) {
-            let imageNumber = Math.floor(Math.random() * 9 + 1)
+            let imageNumber = Math.floor(Math.random() * 11 + 1) //random number 1-11 (11 images)
             let leftPos = Math.floor(Math.random() * 95)
             let delay = Math.floor(Math.random() * -31)
             temp.push([imageNumber, leftPos, delay])
@@ -197,12 +194,14 @@ export default function App() {
             <Container className="cards-container">
                 <Row>
                     <Col>
-                        <TwoCards phase={phase} dropDown1={CardDropDown1} dropDown2={CardDropDown2} text1={foodValues1} text2={foodValues2} />
+                        {/*<TwoCards phase={phase} dropDown1={CardDropDown1} dropDown2={CardDropDown2} text1={foodValues1} text2={foodValues2} />*/}
+                        <TwoCards2 phase={phase} dropDown1={CardDropDown1} text1={foodValues1} text2={foodValues2} />
                     </Col>
                 </Row>
                 <Row className="justify-content-center">
                     <Col className="d-flex justify-content-center">
                         <DisplayButton />
+                        <DisplayResetButton />
                     </Col>
                 </Row>
                 <Container className="results-container">
@@ -210,6 +209,11 @@ export default function App() {
                         <Col className="results-display" xs={12}>
                             <DisplayResults />
                             <div ref={bottomRef} />
+                        </Col>
+                    </Row>
+                    <Row className="justify-content-center">
+                        <Col className="justify-content-center">
+                            <span className="tag-and-link">Solidabiksen koodihaaste 2022 <a href="https://github.com/tjokinen/">github.com/tjokinen/</a></span>
                         </Col>
                     </Row>
                 </Container>

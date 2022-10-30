@@ -13,6 +13,20 @@ $border-radius: 25px;
     max-height: 20vh;
 }
 
+.tag-and-link, .tag-and-link a {
+    color: $dark;
+    font-size: calc(0.2rem + 1.5vw);
+}
+
+.card-img-top {
+    width: unset !important;
+    max-width: 50%;
+    max-height: 10vh;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .Title {
     z-index: 1;
     margin-top: calc(-2rem + 1.5vw);
@@ -45,6 +59,7 @@ $border-radius: 25px;
     }
 }
 
+.card-title-green,
 .card-title-green a {
     text-shadow: 1px 1px 1px $success;
     color: $dark;
@@ -54,6 +69,7 @@ $border-radius: 25px;
     color: $success;
 }
 
+.card-title-red,
 .card-title-red a {
     text-shadow: 1px 1px 1px $danger;
     color: $dark;
