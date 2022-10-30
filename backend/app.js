@@ -2,7 +2,7 @@ const https = require('https')
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const port = 4000
+const port = process.env.PORT || 4000
 
 function getFoodNames(text) {
     return new Promise((resolve, reject) => {
@@ -52,7 +52,7 @@ app.post('/fight', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`app listening on port ${port}`)
 })
 
 ///////////////////////////////////////////////
