@@ -6,6 +6,24 @@ import TwoCards from "./TwoCards"
 import TwoCards2 from "./TwoCards2"
 import CustomModal from "./CustomModal"
 
+import bannerImage from "./images/burgerandpizza.png"
+import img1 from "./images/food1.png"
+import img2 from "./images/food2.png"
+import img3 from "./images/food3.png"
+import img4 from "./images/food4.png"
+import img5 from "./images/food5.png"
+import img6 from "./images/food6.png"
+import img7 from "./images/food7.png"
+import img8 from "./images/food8.png"
+import img9 from "./images/food9.png"
+import img10 from "./images/food10.png"
+import img11 from "./images/food11.png"
+import imgDefault from "./images/fooddefault.png"
+
+const foodImages = [
+    img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11
+]
+
 export default function App() {
 
     const [foodCode1, setFoodCode1] = useState('')
@@ -183,7 +201,7 @@ export default function App() {
             <Container>
                 <Row className="justify-content-center">
                     <Col className="d-flex justify-content-center" xs={5}>
-                        <Image className="image-banner" src="./images/burgerandpizza.png" fluid />
+                        <Image className="image-banner" src={bannerImage} fluid />
                     </Col>
                 </Row>
             </Container>
@@ -220,7 +238,7 @@ export default function App() {
             </Container>
             <Container className="animation-container">
                 {randomList.map((item, index) => {
-                    return <Image className="animated-food" key={index} style={{ left: item[1] + 'vw', animationDelay: item[2] + 's' }} src={"./images/food" + item[0] + ".png"} />
+                    return <Image className="animated-food" key={index} style={{ left: item[1] + 'vw', animationDelay: item[2] + 's' }} src={foodImages[item[0]]} />
                 })}
             </Container>
         </Container>

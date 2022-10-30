@@ -1,6 +1,8 @@
 # koodihaaste-2022
 solidabis koodihaaste 2022
 
+https://ruokarahina-tjokinen.herokuapp.com/
+
 Koodihaasteen tehtävänä oli toteuttaa ruokarähinä teemainen taistelu, jossa ruoat taistelevat keskenään erilaisilla statseilla.
 
 Sovelluksessa on seuraavat toiminnot:
@@ -11,3 +13,8 @@ Sovelluksessa on seuraavat toiminnot:
 -Tulosten esitys Frontendilla
 
 Ratkaisu on toteutettu stackilla Node.js / Express / React
+```
+npm run build
+npm start
+http://localhost:4000/
+```

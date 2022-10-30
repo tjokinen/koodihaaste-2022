@@ -3,6 +3,19 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
+import img1 from "./images/food1.png"
+import img2 from "./images/food2.png"
+import img3 from "./images/food3.png"
+import img4 from "./images/food4.png"
+import img5 from "./images/food5.png"
+import img6 from "./images/food6.png"
+import img7 from "./images/food7.png"
+import img8 from "./images/food8.png"
+import img9 from "./images/food9.png"
+import img10 from "./images/food10.png"
+import img11 from "./images/food11.png"
+import imgDefault from "./images/fooddefault.png"
+
 function TwoCards2({ phase, dropDown1, dropDown2, text1, text2}) {
 
     const text = (textState, phase) => {
@@ -36,24 +49,24 @@ function TwoCards2({ phase, dropDown1, dropDown2, text1, text2}) {
     }
 
     const iconList = {
-        300: 'food6.png',
-        29279: 'food10.png',
-        32766: 'food11.png',
-        28923: 'food4.png',
-        386: 'food5.png',
-        29806: 'food2.png',
-        28920: 'food3.png',
-        330: 'food1.png',
-        350: 'food8.png'
+        300: img6,
+        29279: img10,
+        32766: img11,
+        28923: img4,
+        386: img5,
+        29806: img2,
+        28920: img3,
+        330: img1,
+        350: img8
     }
 
     const image = (textState) => {
         if(textState != ''){
             if (iconList.hasOwnProperty(textState[1])) {
-                return './images/'+iconList[textState[1]]
+                return iconList[textState[1]]
             }
         }
-        return './images/fooddefault.png'
+        return imgDefault
     }
 
     const SecondCard = () => {
