@@ -67,7 +67,7 @@ export default function CustomDropdown({setFoodCode}) {
   }
 
   const filterBySearchTerm = (search) => {
-    fetch("http://localhost:4000/name", {
+    fetch("/name", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

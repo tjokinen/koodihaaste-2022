@@ -87,7 +87,7 @@ export default function App() {
     }, [seconds]);
 
     const getFoodValues = (code, setterFunction) => {
-        fetch("http://localhost:4000/nutritional-values", {
+        fetch("/nutritional-values", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -107,7 +107,7 @@ export default function App() {
     const handleStart = () => {
         setSeconds(0)
         setPhase('running')
-        fetch("http://localhost:4000/fight", {
+        fetch("/fight", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
