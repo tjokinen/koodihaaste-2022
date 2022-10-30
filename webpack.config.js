@@ -35,7 +35,7 @@ module.exports = {
             publicPath: "https://localhost:3000/dist/"
         },
         // hotOnly
-        hot: true
+        hot: false
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
@@ -43,7 +43,7 @@ module.exports = {
             template: path.resolve(__dirname, 'public/index.html'),
             filename: 'index.html'
         })],
-    watch: true,
+    watch: false,
     watchOptions: {
         ignored: ['**/node_modules', '**/backend']
     }
