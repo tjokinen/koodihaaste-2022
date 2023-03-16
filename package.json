@@ -21,7 +21,8 @@
     "build": "webpack --config ./webpack.config.js --mode='production'",
     "watch": "nodemon ./backend/app.js",
     "server": "node ./backend/app.js",
-    "client": "webpack serve --mode development"
+    "client": "webpack serve --mode development",
+    "vercel": "npm run build && npm run start"
   },
   "dependencies": {
     "bootstrap": "^5.2.2",
