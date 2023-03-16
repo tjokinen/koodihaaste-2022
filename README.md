@@ -1,8 +1,6 @@
 # koodihaaste-2022
 solidabis koodihaaste 2022
 
-https://ruokarahina-tjokinen.herokuapp.com/
-
 Koodihaasteen tehtävänä oli toteuttaa ruokarähinä teemainen taistelu, jossa ruoat taistelevat keskenään erilaisilla statseilla.
 
 Sovelluksessa on seuraavat toiminnot:
