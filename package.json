@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "node ./backend/app.js",
-    "build": "webpack --config ./webpack.config.js --mode='production' && node .backend/app.js",
+    "build": "webpack --config ./webpack.config.js --mode='production' && node backend/app.js",
     "watch": "nodemon ./backend/app.js",
     "server": "node ./backend/app.js",
     "client": "webpack serve --mode development"
