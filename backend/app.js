@@ -179,3 +179,8 @@ async function initFoods(foodCode1, foodCode2) {
     const results = fight(foodA, foodB)
     return results
 }
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+  });
+  
