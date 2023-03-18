@@ -20,6 +20,7 @@
     "start": "node ./backend/app.js",
     "build-frontend": "webpack --config ./webpack.config.js --mode='production'",
     "build-backend": "node backend/build.js",
+    "vercel-build": "npm run build-frontend && npm run build-backend",
     "watch": "nodemon ./backend/app.js",
     "server": "node ./backend/app.js",
     "client": "webpack serve --mode development"
