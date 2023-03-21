@@ -39,7 +39,7 @@ function getFoodNames(text) {
 app.use(cors())
 app.use(express.json())
 
-app.post('/name', (req, res) => {
+app.post('/api/name', (req, res) => {
     console.log(req.body.query)
     let searchTerm = req.body.query
     getFoodNames(searchTerm).then((value) => res.send(value))
@@ -47,11 +47,11 @@ app.post('/name', (req, res) => {
 
 })
 
-app.post('/nutritional-values', (req, res) => {
+app.post('/api/nutritional-values', (req, res) => {
     getFoodData(req.body.foodCode).then((value) => res.send(value))
 })
 
-app.post('/fight', (req, res) => {
+app.post('/api/fight', (req, res) => {
     initFoods(req.body.foodCode1, req.body.foodCode2).then((value) => res.send(value))
 })
 

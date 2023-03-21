@@ -105,7 +105,7 @@ export default function App() {
     }, [seconds]);
 
     const getFoodValues = (code, setterFunction) => {
-        fetch("/nutritional-values", {
+        fetch("/api/nutritional-values", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -125,7 +125,7 @@ export default function App() {
     const handleStart = () => {
         setSeconds(0)
         setPhase('running')
-        fetch("/fight", {
+        fetch("/api/fight", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
