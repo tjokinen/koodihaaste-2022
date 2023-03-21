@@ -17,7 +17,7 @@
         "webpack-dev-server": "^4.11.1"
     },
     "scripts": {
-        "build": "webpack --config ./webpack.config.js --mode='production' && cp -R build /public",
+        "build": "webpack --config ./webpack.config.js --mode='production'",
         "client": "webpack serve --mode development"
     },
     "dependencies": {
