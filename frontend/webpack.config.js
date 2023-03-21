@@ -40,7 +40,7 @@ module.exports = {
         port: 3000,
         // publicPath
         devMiddleware: {
-            publicPath: "https://localhost:3000/bundle/"
+            publicPath: "https://localhost:3000/"
         },
         // hotOnly
         hot: false
