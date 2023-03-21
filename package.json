@@ -17,13 +17,14 @@
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
-    "start": "node ./backend/app.js",
-    "build-frontend": "webpack --config ./webpack.config.js --mode='production'",
-    "build-backend": "node backend/build.js",
     "vercel-build": "npm run build-frontend && npm run build-backend",
     "watch": "nodemon ./backend/app.js",
     "server": "node ./backend/app.js",
-    "client": "webpack serve --mode development"
+    "client": "webpack serve --mode development",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "build:backend": "cd backend && npm install",
+    "build": "npm run build:frontend && npm run build:backend",
+    "start": "cd backend && npm start"
   },
   "dependencies": {
     "bootstrap": "^5.2.2",
