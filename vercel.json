@@ -4,10 +4,8 @@
     { "src": "frontend/package.json", "use": "@vercel/static-build" },
     { "src": "backend/package.json", "use": "@vercel/node" }
   ],
-  "routes": [
-    { "src": "^/api/(.*)", "dest": "backend/app.js" }
-  ],
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/backend/server.js" },
     { "source": "/(.*)", "destination": "/frontend/build/$1" }
   ]
 }
