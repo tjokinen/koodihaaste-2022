@@ -5,7 +5,7 @@ const app = express()
 const cors = require('cors')
 
 //When you navigate to the root page, it would use the built react-app
-app.use(express.static(path.resolve(__dirname, "../build")));
+app.use(express.static(path.resolve(__dirname, "public")));
 const port = process.env.PORT || 4000
 
 function getFoodNames(text) {

@@ -1,5 +1,6 @@
 {
     "scripts": {
-        "build": "webpack --config ./webpack.config.js --mode='production'"
-    }
+        "build": "webpack --config ./webpack.config.js --mode='production' && cp -R build ../backend/public"
+      }
+      
 }
