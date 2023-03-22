@@ -1,4 +1,4 @@
-#Koodihaaste 2022 / Ruokarähinä
+# Koodihaaste 2022 / Ruokarähinä
 
 This project was an entry to the [2022 coding challenge by Solidabis](https://koodihaaste.solidabis.com/).
 
