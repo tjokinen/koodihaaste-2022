@@ -8,10 +8,10 @@ The task was to carry out a food fight themed battle, where foods fight each oth
 
 The application must have / has the following functions:
 
-Search of various nutritional contents from an external source (Fineli API)
-Converting nutritional contents into character categories
-Logic implementation for a duel between two food figures
-Presentation of the results on the Frontend
+-Search of various nutritional contents from an external source (Fineli API)
+-Converting nutritional contents into character categories
+-Logic implementation for a duel between two food figures
+-Presentation of the results on the Frontend
 
 The project was originally created using React, Node.js, Express and deployed on Heroku.
 After Heroku limited their services, the project has been migrated to use Next.js and is now deployed on Vercel.
