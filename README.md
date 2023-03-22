@@ -1,3 +1,5 @@
+<img width="697" alt="image" src="https://user-images.githubusercontent.com/43413120/226822442-64c0a460-057a-4a40-a114-bdc5069668d5.png">
+
 # Koodihaaste 2022 / Ruokarähinä
 
 This project was an entry to the [2022 coding challenge by Solidabis](https://koodihaaste.solidabis.com/).
@@ -8,10 +10,10 @@ The task was to carry out a food fight themed battle, where foods fight each oth
 
 The application must have / has the following functions:
 
--Search of various nutritional contents from an external source (Fineli API)
--Converting nutritional contents into character categories
--Logic implementation for a duel between two food figures
--Presentation of the results on the Frontend
+- Search of various nutritional contents from an external source ([Fineli API](https://fineli.fi/fineli/en/ohje/19))
+- Converting nutritional contents into character categories
+- Logic implementation for a duel between two food figures
+- Presentation of the results on the Frontend
 
 The project was originally created using React, Node.js, Express and deployed on Heroku.
 After Heroku limited their services, the project has been migrated to use Next.js and is now deployed on Vercel.
