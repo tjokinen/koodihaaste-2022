@@ -1,24 +1,23 @@
 import React, { useEffect, useState, useRef } from "react"
-import "./App.scss"
-import CustomDropdown from "./CustomDropdown"
-import { Button, Container, Image, Row, Col } from 'react-bootstrap'
-import TwoCards from "./TwoCards"
-import TwoCards2 from "./TwoCards2"
-import CustomModal from "./CustomModal"
+import CustomDropdown from "../components/CustomDropdown"
+import { Button, Container, Row, Col } from 'react-bootstrap'
+import TwoCards2 from "../components/TwoCards2"
+import CustomModal from "../components/CustomModal"
+import Image from "next/image"
 
-import bannerImage from "./images/burgerandpizza.png"
-import img1 from "./images/food1.png"
-import img2 from "./images/food2.png"
-import img3 from "./images/food3.png"
-import img4 from "./images/food4.png"
-import img5 from "./images/food5.png"
-import img6 from "./images/food6.png"
-import img7 from "./images/food7.png"
-import img8 from "./images/food8.png"
-import img9 from "./images/food9.png"
-import img10 from "./images/food10.png"
-import img11 from "./images/food11.png"
-import imgDefault from "./images/fooddefault.png"
+import bannerImage from "../images/burgerandpizza.png"
+import img1 from "../images/food1.png"
+import img2 from "../images/food2.png"
+import img3 from "../images/food3.png"
+import img4 from "../images/food4.png"
+import img5 from "../images/food5.png"
+import img6 from "../images/food6.png"
+import img7 from "../images/food7.png"
+import img8 from "../images/food8.png"
+import img9 from "../images/food9.png"
+import img10 from "../images/food10.png"
+import img11 from "../images/food11.png"
+import imgDefault from "../images/fooddefault.png"
 
 const foodImages = [
     img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11
@@ -58,7 +57,7 @@ export default function App() {
         }
     }, [foodCode1, foodCode2])
 
-    //THIS WILL RUN EVERY SECOND
+    //THIS WILL RUN EVERY 0.5 SECOND
     useEffect(() => {
         const interval = setInterval(() => {
             if (phase == 'running' && results != '') {
@@ -100,7 +99,7 @@ export default function App() {
                 }
             }
             setSeconds(seconds + 1)
-        }, 1000);
+        }, 500);
         return () => clearInterval(interval);
     }, [seconds]);
 
@@ -187,7 +186,7 @@ export default function App() {
     useEffect(() => {
         let temp = []
         for (let i = 0; i < 30; i++) {
-            let imageNumber = Math.floor(Math.random() * 11 + 1) //random number 1-11 (11 images)
+            let imageNumber = Math.floor(Math.random() * 11) //random number 0-10 (11 images)
             let leftPos = Math.floor(Math.random() * 95)
             let delay = Math.floor(Math.random() * -31)
             temp.push([imageNumber, leftPos, delay])
@@ -201,7 +200,7 @@ export default function App() {
             <Container>
                 <Row className="justify-content-center">
                     <Col className="d-flex justify-content-center" xs={5}>
-                        <Image className="image-banner" src={bannerImage} fluid />
+                        <Image className="image-banner" src={bannerImage} style={{maxWidth: '200px'}} priority={true} alt="RuokaRähinä"/>
                     </Col>
                 </Row>
             </Container>
@@ -238,7 +237,7 @@ export default function App() {
             </Container>
             <Container className="animation-container">
                 {randomList.map((item, index) => {
-                    return <Image className="animated-food" key={index} style={{ left: item[1] + 'vw', animationDelay: item[2] + 's' }} src={foodImages[item[0]]} />
+                    return <Image className="animated-food" alt="background-animation" key={index} style={{ left: item[1] + 'vw', animationDelay: item[2] + 's' }} src={foodImages[item[0]]} />
                 })}
             </Container>
         </Container>
