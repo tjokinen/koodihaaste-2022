@@ -16,7 +16,7 @@ The application must have / has the following functions:
 - Presentation of the results on the Frontend
 
 The project was originally created using React, Node.js, Express and deployed on Heroku.
-After Heroku limited their services, the project has been migrated to use Next.js and is now deployed on Vercel.
+Now the project has been migrated to use Next.js and is now deployed on Vercel.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
